@@ -9,13 +9,14 @@
 <body>
     <div class="container">
         <h1>Users</h1>
-
+        <a href="/users/new">Add new User</a>
         <div class="card">
             <% for (let u of users) { %>
                 <div class="student">
-                    <h3><%= u.Name %></h3>
-                    <p>Age: <%= u.Age %></p>
-                    <p>Course: <%= u.Course %></p>
+                    <h3><%= u.name %></h3>
+                    <p>age: <%= u.age %></p>
+                    <p>password:<%=u.password %></p>
+                    <p>course: <%= u.course %></p>
                 </div>
             <% } %>
         </div>
