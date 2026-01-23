@@ -17,6 +17,8 @@
                     <p>age: <%= u.age %></p>
                     <p>password:<%=u.password %></p>
                     <p>course: <%= u.course %></p>
+                    <a href="/users/<%= u.id %>">Show</a>
+                    <a href="/users/<%= u.id %>/edit">Edit</a>
                 </div>
             <% } %>
         </div>

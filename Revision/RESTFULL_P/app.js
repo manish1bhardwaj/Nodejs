@@ -13,6 +13,17 @@ app.get('/',(req,res)=>{
     res.send('Home Page');
 })
 
+app.get('/users/:id',(req,res)=>{
+    const{id}=req.params;
+    const user = users.find((item)=>item.id==id);
+    res.render('show',{user});
+})
+app.get('/users/:id/edit',(req,res)=>{
+    const{id}=req.params;
+    const user = users.find((item)=>item.id==id);
+    res.render('edit',{user});
+})
+
 app.get('/users',(req,res)=>{
     res.render('users',{users});
 })
