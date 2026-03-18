@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <style>
+      :root {
+        --bg-1: #f5f8ff;
+        --bg-2: #e5ecff;
+        --card: #ffffff;
+        --text: #1f2a44;
+        --muted: #6b7280;
+        --primary: #1e4ed8;
+        --primary-hover: #173fb1;
+        --border: #d1d9ea;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+        color: var(--text);
+      }
+
+      .login-card {
+        width: min(92vw, 380px);
+        background: var(--card);
+        padding: 28px;
+        border-radius: 14px;
+        box-shadow: 0 14px 40px rgba(30, 78, 216, 0.15);
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: 1.45rem;
+      }
+
+      p {
+        margin: 0 0 22px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .field {
+        margin-bottom: 14px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      input {
+        width: 100%;
+        padding: 11px 12px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        font-size: 0.95rem;
+        outline: none;
+      }
+
+      input:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(30, 78, 216, 0.15);
+      }
+
+      button {
+        width: 100%;
+        border: none;
+        border-radius: 10px;
+        padding: 11px;
+        margin-top: 6px;
+        font-size: 0.98rem;
+        font-weight: 600;
+        color: #fff;
+        background: var(--primary);
+        cursor: pointer;
+        transition: background 0.2s ease;
+      }
+
+      button:hover {
+        background: var(--primary-hover);
+      }
+
+      .helper {
+        margin-top: 14px;
+        text-align: center;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <form class="login-card" action="/login" method="post">
+      <h1>Welcome Back</h1>
+      <p>Please sign in to continue.</p>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          required
+        />
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          minlength="6"
+          required
+        />
+      </div>
+
+      <button type="submit">Login</button>
+      <div class="helper">Forgot password? Contact admin.</div>
+    </form>
+  </body>
+</html>
