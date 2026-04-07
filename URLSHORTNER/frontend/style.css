@@ -1,19 +1,21 @@
-* {
-    margin:0;
-    padding:0;
+*{
+    margin: 0;
+    padding: 0;
 }
+
 .container {
-    /* border:2px solid rgb(248, 4, 4); */
-    min-height: 100vh;
+    /* border: 2px solid red; */
+    height: 100vh;
     width: 100vw;
-    background-color: cadetblue;
+    background-color: maroon;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-.Box {
-    height: 100px;
-    width: 100px;
-    background-color: rgb(255, 255, 255);
+
+.box {
+    /* border:  2px solid red; */
+    height: 40vh;
+    width: 40vw;
+    background-color: aliceblue;
 }

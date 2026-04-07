@@ -1,21 +1,24 @@
-const mongoose = require('mongoose');
-const urlSchema = new mongoose.Schema({
-    originalUrl: {
-        type: String,
-        required: true
+const mongoose = require("mongoose");
+
+const urlSchemea = new mongoose.Schema({
+    originalUrl:{
+        type:String,
+        required:true
     },
-    shortUrl: {
-        type: String,
-        required: true,
-        unique: true
+    shortCode:{
+        type:String,
+        required:true,
+        unique:true
     },
-    count: {
-        type: Number,
-        default: 0
+    count:{
+        type:Number,
+        default:0
     }
 },{
-    timestamps: true
+    timestamps:true
 }
 );
-const Url = mongoose.model('Url', urlSchema);   
-module.exports = Url;
+
+const url = mongoose.model("Url", urlSchemea)
+
+module.exports = url;
