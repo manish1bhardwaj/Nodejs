@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            if (typeof window === "undefined") return;
+            const perf = window.performance;
+            if (!perf) return;
+            if (typeof perf.clearMarks !== "function") {
+                perf.clearMarks = function () {};
+            }
+            if (typeof perf.clearMeasures !== "function") {
+                perf.clearMeasures = function () {};
+            }
+        })();
+    </script>
+    <style>
+        :root {
+            --bg-1: #f8fafc;
+            --bg-2: #ffe4d6;
+            --bg-3: #d8f3dc;
+            --text: #0f172a;
+            --muted: #475569;
+            --brand: #ea580c;
+            --brand-dark: #c2410c;
+            --card: #ffffff;
+            --line: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Space Grotesk", "Segoe UI", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 10% 10%, var(--bg-2), transparent 35%),
+                radial-gradient(circle at 90% 15%, var(--bg-3), transparent 40%),
+                linear-gradient(135deg, var(--bg-1) 0%, #fff 100%);
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+        }
+
+        .shell {
+            width: 100%;
+            max-width: 980px;
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 18px 44px rgba(15, 23, 42, 0.1);
+        }
+
+        .topbar {
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .brand {
+            font-family: "Sora", "Segoe UI", sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        .badge {
+            font-size: 0.82rem;
+            color: #9a3412;
+            background: #ffedd5;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid #fdba74;
+        }
+
+        .hero {
+            padding: 38px 28px 28px;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        h1 {
+            font-family: "Sora", "Segoe UI", sans-serif;
+            margin: 0 0 12px;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            line-height: 1.08;
+        }
+
+        .lead {
+            margin: 0 0 22px;
+            color: var(--muted);
+            max-width: 55ch;
+            font-size: 1rem;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            padding: 11px 16px;
+            font-weight: 600;
+            border: 1px solid transparent;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+        }
+
+        .btn:focus-visible {
+            outline: 3px solid rgba(234, 88, 12, 0.25);
+            outline-offset: 2px;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            box-shadow: 0 8px 18px rgba(234, 88, 12, 0.28);
+        }
+
+        .btn-secondary {
+            color: var(--text);
+            background: #fff;
+            border-color: #cbd5e1;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .panel {
+            background: var(--card);
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 18px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .panel h2 {
+            margin: 0;
+            font-size: 1.05rem;
+            font-family: "Sora", "Segoe UI", sans-serif;
+        }
+
+        .panel p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.45;
+        }
+
+        .points {
+            margin: 0;
+            padding-left: 18px;
+            color: #334155;
+            display: grid;
+            gap: 6px;
+            font-size: 0.93rem;
+        }
+
+        @media (max-width: 820px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 24px 18px 20px;
+            }
+
+            .topbar {
+                padding: 12px 16px;
+            }
+
+            .actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="shell">
+        <header class="topbar">
+            <div class="brand">Storefront Dashboard</div>
+            <div class="badge">MongoDB + Express + EJS</div>
+        </header>
+
+        <section class="hero">
+            <div>
+                <h1>Manage Products Faster With a Clean, Friendly Dashboard</h1>
+                <p class="lead">
+                    Browse your inventory, add new products in seconds, and keep your catalog updated with a simple and responsive interface.
+                </p>
+                <div class="actions">
+                    <a href="/products" class="btn btn-primary">View All Products</a>
+                    <a href="/products/new" class="btn btn-secondary">Add New Product</a>
+                </div>
+            </div>
+
+            <aside class="panel">
+                <h2>Why this page works</h2>
+                <p>Focused layout with clear actions to reduce clicks and improve flow.</p>
+                <ul class="points">
+                    <li>Responsive design for desktop and mobile</li>
+                    <li>Strong visual contrast and readable typography</li>
+                    <li>Direct shortcuts to listing and add-product form</li>
+                </ul>
+            </aside>
+        </section>
+    </main>
+</body>
+</html>
